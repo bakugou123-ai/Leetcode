@@ -1,0 +1,13 @@
+lass Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        hashmap={}
+        for i in words:
+            hashmap[i]=words.count(i)
+
+        
+        sorted_words = sorted(hashmap.keys(), key=lambda word: (-hashmap[word], word))
+    
+        return sorted_words[:k]
+        
+
+        
