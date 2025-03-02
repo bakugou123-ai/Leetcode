@@ -1,0 +1,5 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s=s.lower().replace(" ","")
+        s=''.join(filter(lambda x: x.isalnum()==True,s))
+        return s==s[::-1]
