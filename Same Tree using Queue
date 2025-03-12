@@ -1,0 +1,17 @@
+class Solution:
+    def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+        m=deque()
+        m.append((p,q))
+
+        while m:
+            l,r=m.popleft()
+
+            if not l and not r:
+                return True
+
+            if not l or not r or l.val!=r.val:
+                return False
+
+            m.append((l.left,r.left)) 
+            m.append((l.right,r.right))
+        return True
