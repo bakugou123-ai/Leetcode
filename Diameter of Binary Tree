@@ -1,0 +1,14 @@
+class Solution:
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        self.max_d=0
+        def path(root):
+            if not root:
+                return 0 
+            l=path(root.left)
+            r=path(root.right)
+            self.max_d = max(self.max_d,l+r)
+
+            return 1 + max(l,r)
+
+        path(root)
+        return self.max_d
